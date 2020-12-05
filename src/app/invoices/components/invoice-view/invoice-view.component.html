@@ -41,6 +41,6 @@
     <button mat-button [routerLink]="['/dashboard', 'invoices', invoice._id]">
       Edit
     </button>
-    <button mat-button>Download</button>
+    <button mat-button (click)="download(invoice._id)">Download</button>
   </mat-card-actions>
 </mat-card>

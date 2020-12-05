@@ -1,5 +1,7 @@
 import { NgModule } from "@angular/core";
 import { Routes, RouterModule } from "@angular/router";
+
+import { AboutComponent } from "../about/about.component";
 import { ClientListComponent } from "../clients/components/client-list/client-list.component";
 import { AuthGuardService } from "../core/services/auth-guard.service";
 import { InvoiceFormComponent } from "../invoices/components/invoice-form/invoice-form.component";
@@ -44,6 +46,11 @@ const routes: Routes = [
       {
         path: "clients",
         component: ClientListComponent,
+        canActivateChild: [AuthGuardService],
+      },
+      {
+        path: "about",
+        component: AboutComponent,
         canActivateChild: [AuthGuardService],
       },
       {

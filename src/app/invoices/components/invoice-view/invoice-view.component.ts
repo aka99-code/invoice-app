@@ -1,5 +1,7 @@
 import { Component, OnInit } from "@angular/core";
-import { ActivatedRoute } from "@angular/router";
+import { ActivatedRoute, Router } from "@angular/router";
+import { MatSnackBar } from "@angular/material";
+
 import { Invoice } from "../../models/invoice";
 
 @Component({
@@ -10,7 +12,11 @@ import { Invoice } from "../../models/invoice";
 export class InvoiceViewComponent implements OnInit {
   invoice: Invoice;
   total: number;
-  constructor(private route: ActivatedRoute) {}
+  constructor(
+    private route: ActivatedRoute,
+    private snackbar: MatSnackBar,
+    private router: Router
+  ) {}
 
   ngOnInit() {
     this.route.data.subscribe((data: { invoice: Invoice }) => {
@@ -28,5 +34,12 @@ export class InvoiceViewComponent implements OnInit {
       }
       this.total += totaltax;
     });
+  }
+
+  download(id: string) {
+    this.snackbar.open("sorry this feature available soon!", "error", {
+      duration: 2000,
+    });
+    this.router.navigate(["dashboard", "invoices", "id"]);
   }
 }

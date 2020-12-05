@@ -11,6 +11,7 @@ export class SideNavComponent implements OnInit {
   links = [
     { name: "Invoices", url: "invoices" },
     { name: "Clients", url: "clients" },
+    { name: "About Me", url: "about" },
   ];
 
   private mediaMatcher: MediaQueryList = matchMedia(

@@ -12,6 +12,7 @@ import { InvoicesModule } from "../invoices/invoices.module";
 import { ClientsModule } from "../clients/clients.module";
 import { HTTP_INTERCEPTORS } from "@angular/common/http";
 import { HttpInterceptorService } from "../core/services/http-interceptor.service";
+import { AboutComponent } from "../about/about.component";
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { HttpInterceptorService } from "../core/services/http-interceptor.servic
     MainContentComponent,
     SideNavComponent,
     ToolBarComponent,
+    AboutComponent,
   ],
   imports: [
     CommonModule,
