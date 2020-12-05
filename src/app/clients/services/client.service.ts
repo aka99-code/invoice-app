@@ -2,8 +2,9 @@ import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Observable } from "rxjs";
 import { Client } from "../models/client";
+import { environment } from "../../../environments/environment";
 
-const BASE_URL = "http://localhost:3000/api";
+const BASE_URL = environment.api_url;
 
 export class ClientService {
   constructor(private http: HttpClient) {}

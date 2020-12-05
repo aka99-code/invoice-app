@@ -1,8 +1,9 @@
 import { HttpClient } from "@angular/common/http";
 import { Observable } from "rxjs";
 import { Invoice, InvoiceWithPage } from "../models/invoice";
+import { environment } from "../../../environments/environment";
 
-const BASE_URL = "http://localhost:3000/api";
+const BASE_URL = environment.api_url;
 export class InvoiceService {
   constructor(private http: HttpClient) {}
 
